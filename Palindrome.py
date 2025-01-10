@@ -3,21 +3,21 @@ class Palindrome:
     global INPUT, WORK, OUTPUT
     INPUT, WORK, OUTPUT = 0, 1, 2
 
-    def __init__(self, test=False): # input tape is a string of 1s and 0s  
+    def __init__(self, testing_mode=False): # input tape is a string of 1s and 0s  
         self.input_tape, self.worktape, self.output_tape = [], [], []     
         self.state = 'begin' # begin, copy, check, halt
         self.runtime = 0
 
-        self.test = test # if we are using the test case
+        self.testing_mode = testing_mode # if we are using the test case
     
     def is_palindrome(self, input_tape):
         self.create_tapes(input_tape)
-        if not self.test: self.print_tapes()
+        self.print_tapes()
         while (self.state != 'halt'):
             self.run_cases()
             self.runtime_step()
-            if not self.test: self.print_tapes()
-        if not self.test: self.print_result()
+            self.print_tapes()
+        self.print_result()
         return self.tapes[OUTPUT][self.head_position[OUTPUT]]
 
     def create_tapes(self, input_tape):
@@ -102,6 +102,8 @@ class Palindrome:
         print("Runtime: " + str(self.runtime))
 
     def print_tapes(self):
+        if self.testing_mode: # return if we are in testing mode (useful for batch testing)
+            return
         in_length = len(str(self.tapes[INPUT]))
         work_length = len(str(self.tapes[WORK]))
         out_length = len(str(self.tapes[OUTPUT]))
