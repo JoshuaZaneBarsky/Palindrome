@@ -98,6 +98,8 @@ class Palindrome:
 
     # --- For printing --- #
     def print_result(self):
+        if self.testing_mode: # return if we are in testing mode (useful for batch testing)
+            return
         print("is_palindrome(" + str(self.input_tape) + ") = " + str(self.tapes[OUTPUT][self.head_position[OUTPUT]]))
         print("Runtime: " + str(self.runtime))
 

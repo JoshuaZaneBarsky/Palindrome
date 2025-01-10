@@ -16,9 +16,9 @@ class Batch_test:
             if P.is_palindrome(pal) == 0: # found a non palindrome where palindromes should exist
                 error = True
                 break
-            print('[|' * (i//(num_checks//100)), end="")
+            print('[' + '|' * (i//(num_checks//100)), end="")
             remaining = (num_checks//100)-(i//(num_checks//100))
-            print(' ' * remaining * ']')
+            print(' ' * (remaining-1) + ']')
 
         if error:
             print("Error: a palindrome was found.")
@@ -34,9 +34,9 @@ class Batch_test:
             if P.is_palindrome(non_pal) == 1: # found a palindrome where non should exist
                 error = True
                 break
-            print('[|' * (i//(num_checks//100)), end="")
+            print('[' + '|' * (i//(num_checks//100)), end="")
             remaining = (num_checks//100)-(i//(num_checks//100))
-            print(' ' * remaining * ']')
+            print(' ' * (remaining-1) + ']')
 
         if error:
             print("Error: a non palindrome was found.")
