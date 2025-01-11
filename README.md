@@ -2,6 +2,8 @@
 
 This Python program simulates a Turing Machine to check whether a binary string (composed of `0`s and `1`s) is a palindrome. It utilizes three tapes (`input`, `work`, and `output`) and a finite set of states to perform the computation.
 
+This program was written off of the equations given to us in CS215 Theory of Computation at UC Riverside, taught by Silas Richelson.
+
 ---
 
 ## Features
