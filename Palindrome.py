@@ -10,8 +10,8 @@ class Palindrome:
 
         self.testing_mode = testing_mode # if we are using the test case
     
-    def is_palindrome(self, input_tape):
-        self.create_tapes(input_tape)
+    def is_palindrome(self, input_data):
+        self.create_tapes(input_data)
         self.print_tapes()
         while (self.state != 'halt'):
             self.run_cases()
